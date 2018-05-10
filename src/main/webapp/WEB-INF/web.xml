@@ -5,7 +5,15 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
     http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
+    <filter>
+        <filter-name>H2DBAdmin filter</filter-name>
+        <filter-class>com.tanykoo.filter.H2Filter</filter-class>
+    </filter>
 
+    <filter-mapping>
+        <filter-name>H2DBAdmin filter</filter-name>
+        <servlet-name>H2Servlet</servlet-name>
+    </filter-mapping>
     <listener>
         <listener-class>com.tanykoo.h2.H2DBServerListener</listener-class>
     </listener>
