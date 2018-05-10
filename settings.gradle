@@ -1,0 +1,3 @@
+rootProject.name = 'Web-Template'
+include 'JavaFx_T01'
+

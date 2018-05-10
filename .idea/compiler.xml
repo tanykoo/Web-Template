@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="JavaFx_T01_main" target="1.8" />
+      <module name="JavaFx_T01_test" target="1.8" />
+      <module name="Web-Template_main" target="1.8" />
+      <module name="Web-Template_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
