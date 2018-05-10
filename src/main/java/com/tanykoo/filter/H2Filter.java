@@ -6,6 +6,7 @@ import org.springframework.http.HttpRequest;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -25,8 +26,17 @@ public class H2Filter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         String reqhost = servletRequest.getRemoteHost();
         HttpServletRequest httpRequest = (HttpServletRequest) servletRequest;
-        httpRequest.getRequestURI();
+        HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
         logger.debug(reqhost);
+        logger.debug(httpRequest.getRequestURI());
+
+        if(true){
+            /* 过滤器重定向 */
+            httpServletResponse.sendRedirect(httpRequest.getContextPath()+"/user/login");
+        }else {
+            /* 过滤完成后需要继续请求*/
+            filterChain.doFilter(servletRequest, servletResponse);
+        }
     }
 
     @Override
